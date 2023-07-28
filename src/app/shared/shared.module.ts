@@ -4,6 +4,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { SelectComponent } from './component/select/select.component';
 import { HeaderComponent } from './component/header/header.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -11,12 +12,12 @@ import { RouterModule } from '@angular/router';
   declarations: [
     NavbarComponent,
     SelectComponent,
-
     HeaderComponent
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent
