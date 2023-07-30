@@ -5,6 +5,7 @@ import { SelectComponent } from './component/select/select.component';
 import { HeaderComponent } from './component/header/header.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 
 
@@ -12,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     NavbarComponent,
     SelectComponent,
-    HeaderComponent
+    HeaderComponent,
+    SpinnerComponent
   ],
   imports: [
     RouterModule,
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }

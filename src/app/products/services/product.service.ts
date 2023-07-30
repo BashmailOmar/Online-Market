@@ -9,6 +9,14 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getAllProducts() {
-    return this.http.get(environment.baseUrl+'products')
+    return this.http.get(environment.baseUrl + 'products')
+  }
+
+  getAllCategories() {
+    return this.http.get(environment.baseUrl + 'products/categories')
+  }
+
+  getProductByCategory(keyword: string) {
+    return this.http.get(environment.baseUrl + 'products/category/' + keyword)
   }
 }

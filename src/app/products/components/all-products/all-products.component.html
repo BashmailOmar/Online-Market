@@ -2,15 +2,13 @@
 
     <div class="my-4  w-25">
         <label for="" class="my-1">Categorise :</label>
-        <select class="form-control">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+        <select class="form-control" (change)="filterCaregory($event)">
+            <option value="all" selected>All</option>
+            <option *ngFor="let option of categories" value="{{option}}">{{option}}</option>
         </select>
     </div>
 
-    <div class="row">
+    <div class="row" *ngIf="!loader">
         <div class="col-md-3 col-sm-12" *ngFor="let product of products">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
@@ -26,5 +24,7 @@
         </div>
 
     </div>
-
+    <div class="text-center w-100" *ngIf="loader">
+        <app-spinner></app-spinner>
+    </div>
 </div>
