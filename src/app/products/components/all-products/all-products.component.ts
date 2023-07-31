@@ -35,7 +35,7 @@ export class AllProductsComponent {
   }
   filterCaregory(event: any) {
     let value = event.target.value;
-    (value != "all") ? this.getProductByCategory(event.target.value) : this.getProducts();
+    (value != "all") ? this.getProductByCategory(value  ) : this.getProducts();
   }
 
   getProductByCategory(keyword: string) {
