@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductComponent } from './components/product/product.component';
+import { AllProductsComponent } from './components/all-products/all-products.component';
 
 
 
@@ -11,7 +12,9 @@ import { ProductComponent } from './components/product/product.component';
 @NgModule({
   declarations: [
     ProductsDetailsComponent,
-    ProductComponent],
+    ProductComponent,
+    AllProductsComponent
+  ],
 
   imports: [
     CommonModule,
@@ -19,7 +22,7 @@ import { ProductComponent } from './components/product/product.component';
     SharedModule
   ],
   exports: [
-    ProductComponent
+
   ]
 })
 export class ProductsModule { }
