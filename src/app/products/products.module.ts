@@ -3,7 +3,7 @@ import { ProductsDetailsComponent } from './components/products-details/products
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { ProductsCardComponent } from './components/products-card/products-card.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 
@@ -11,12 +11,15 @@ import { ProductsCardComponent } from './components/products-card/products-card.
 @NgModule({
   declarations: [
     ProductsDetailsComponent,
-    ProductsCardComponent,
-  ],
+    ProductComponent],
+
   imports: [
     CommonModule,
     BrowserModule,
     SharedModule
+  ],
+  exports: [
+    ProductComponent
   ]
 })
 export class ProductsModule { }

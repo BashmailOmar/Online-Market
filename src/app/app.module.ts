@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AllProductsComponent } from './products/components/all-products/all-products.component';
+import { ProductsModule } from './products/products.module';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { AllProductsComponent } from './products/components/all-products/all-pro
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
