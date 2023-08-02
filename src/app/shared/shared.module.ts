@@ -25,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     SpinnerComponent,
     SelectComponent,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

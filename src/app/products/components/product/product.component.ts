@@ -8,10 +8,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ProductComponent {
   @Input() productData: any;
   @Output() item = new EventEmitter();
+  addButton: boolean = false;
+  amount: number = 0;
 
 
   add() {
-    this.item.emit(this.productData);
+    this.item.emit({ item: this.productData, quantanty: this.amount });
+    this.addButton = false;
   }
 
 }
