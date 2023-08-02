@@ -16,6 +16,7 @@ export class AllProductsComponent {
   }
   products: any[] = [];
   categories: any[] = [];
+  cartProduct: any[] = [];
   loader: boolean = false;
 
   getProducts() {
@@ -35,7 +36,7 @@ export class AllProductsComponent {
   }
   filterCaregory(event: any) {
     let value = event.target.value;
-    (value != "all") ? this.getProductByCategory(value  ) : this.getProducts();
+    (value != "all") ? this.getProductByCategory(value) : this.getProducts();
   }
 
   getProductByCategory(keyword: string) {
@@ -44,5 +45,21 @@ export class AllProductsComponent {
       this.loader = false;
       this.products = response;
     });
+  }
+
+  addToCart(event: any) {
+    if ("cart" in localStorage) {
+      this.cartProduct = JSON.parse(localStorage.getItem("cart")!);
+      let exist = this.cartProduct.find(item => item.id == event.id);
+      if (exist) {
+        alert("Bro!, you just fucked up");
+      } else {
+        this.cartProduct.push(event);
+        localStorage.setItem("cart", JSON.stringify(this.cartProduct));
+      }
+    } else {
+      this.cartProduct.push(event);
+      localStorage.setItem("cart", JSON.stringify(this.cartProduct));
+    }
   }
 }
