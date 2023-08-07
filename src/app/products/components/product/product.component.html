@@ -7,10 +7,12 @@
         </div>
     </div>
     <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
-        <a class="btn btn-primary" *ngIf="!addButton" (click)="addButton = true">Add to cart</a>
-        <div class="d-flex w-25" *ngIf="addButton">
-            <input type="number" class="form-control" [(ngModel)]="amount">
-            <button (click)="add()"></button>
+        <a class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" *ngIf="!addButton"
+            (click)="addButton = true">Add to cart</a>
+        <div class="d-flex w-50" *ngIf="addButton">
+
+            <input type="number" min="1" class="form-control form-control-sm" [(ngModel)]="amount">
+            <button (click)="add()" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">add</button>
         </div>
         <span class="price">{{productData.price}}$</span>
     </div>
